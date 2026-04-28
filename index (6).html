@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio - Wilmar Andrés Machado Iguarán</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <div class="header-logo"></div>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="nav-menu" class="nav-cerrado">
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('nav-menu');
+    btn.addEventListener('click', () => {
+      const abierto = nav.classList.toggle('nav-abierto');
+      nav.classList.toggle('nav-cerrado', !abierto);
+      btn.setAttribute('aria-expanded', abierto);
+    });
+  </script>
+
+  <main>
+
+    <section id="hero">
+      <img src="https://placehold.co/218x218" alt="Foto de perfil de Wilmar Andrés Machado Iguarán" />
+      <div class="hero-info">
+        <h1>WILMAR ANDRÉS MACHADO IGUARÁN</h1>
+        <p>Diseñador Gráfico</p>
+      </div>
+    </section>
+
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy estudiante de Diseño Gráfico en la Fundación Universitaria del Área Andina
+        y Tecnólogo en Producción Multimedia por el SENA.
+        Mi enfoque combina la estética cinematográfica con el diseño editorial y de marca,
+        buscando siempre contar historias que conecten.
+      </p>
+    </section>
+
+    <section id="proyectos">
+      <h2>Proyectos</h2>
+      <ul>
+        <li>
+          <article>
+            <img src="https://uploads.onecompiler.io/44g8sbsze/44g8rxpwt/Sofia-final-ahora-si.webp" alt="Proyecto Complex" />
+            <h3>Complex</h3>
+            <p>Diseño editorial de poster utilizando Fotografía y Diseño</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <img src="https://uploads.onecompiler.io/44g8sbsze/44g8rxpwt/Mesa%20de%20trabajo%201.webp" alt="Proyecto Urban" />
+            <h3>Urban</h3>
+            <p>Desarrollo de portada de revista ficticia</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <img src="https://uploads.onecompiler.io/44g8sbsze/44g8rxpwt/Fondodfghfd.webp" alt="Proyecto Your Context" />
+            <h3>Your Context</h3>
+            <p>Desarrollo de una portada para un album basado en la personalidad e identidad de un amigo</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <ul>
+        <li>Diseño Editorial (Affinity, InDesign)</li>
+        <li>Ilustración y Branding (Affinity, Illustrator)</li>
+        <li>Fotografía y Retoque Digital</li>
+        <li>Producción y Realización Audiovisual</li>
+        <li>Gestión de herramientas de diseño (Canva, Adobe Suite)</li>
+      </ul>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <address>
+        <p>Email: <a href="mailto:1wilmarmachado@gmail.com">1wilmarmachado@gmail.com</a></p>
+        <p>Número: <a href="tel:3163296958">3163296958</a></p>
+      </address>
+    </section>
+
+  </main>
+
+</body>
+</html>

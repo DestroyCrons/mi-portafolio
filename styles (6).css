@@ -1,0 +1,339 @@
+/* ============================================
+   VARIABLES
+   ============================================ */
+:root {
+  --color-fondo: #0F2D4F;
+  --color-acento: #60C849;
+  --color-texto: #FAFBEF;
+  --color-tarjeta-texto: #0F2D4F;
+}
+
+/* ============================================
+   RESET BÁSICO
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   BASE (Mobile first — ~402px)
+   ============================================ */
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  padding: 20px 40px;
+}
+
+/* --- Header mobile --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.header-logo {
+  width: 89px;
+  height: 43px;
+  background-color: #D9D9D9;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-texto);
+}
+
+/* Menú desplegable mobile */
+nav {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background-color: var(--color-fondo);
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+nav a {
+  color: var(--color-texto);
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-cerrado {
+  display: none;
+}
+
+.nav-abierto {
+  display: block;
+}
+
+/* --- Secciones --- */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+section h2 {
+  color: var(--color-acento);
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+section p {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* --- Hero --- */
+#hero {
+  gap: 32px;
+}
+
+#hero img {
+  width: 218px;
+  height: 218px;
+  border-radius: 50%;
+}
+
+#hero h1 {
+  color: var(--color-acento);
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+#hero p {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* --- Proyectos --- */
+#proyectos ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+#proyectos article {
+  width: 100%;
+  max-width: 316px;
+  background-color: var(--color-acento);
+  border-radius: 15px;
+  padding: 8px 16px 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#proyectos article img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 15px;
+}
+
+#proyectos article h3 {
+  color: var(--color-tarjeta-texto);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+#proyectos article p {
+  color: var(--color-tarjeta-texto);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* --- Contacto --- */
+#contacto address {
+  font-style: normal;
+  text-align: center;
+  line-height: 40px;
+}
+
+#contacto a {
+  color: var(--color-texto);
+  text-decoration: none;
+}
+
+/* ============================================
+   TABLET (min-width: 600px)
+   ============================================ */
+@media (min-width: 600px) {
+
+  body {
+    max-width: 744px;
+    margin: 0 auto;
+    padding: 40px 80px;
+  }
+
+  /* Header tablet: nav horizontal, sin hamburguesa ni logo */
+  header {
+    justify-content: flex-start;
+    gap: 40px;
+    padding-bottom: 44px;
+  }
+
+  .header-logo {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  nav {
+    position: static;
+    display: block !important;
+  }
+
+  nav ul {
+    flex-direction: row;
+    gap: 40px;
+    padding: 0;
+  }
+
+  nav a {
+    font-size: 20px;
+  }
+
+  /* Proyectos en fila en tablet */
+  #proyectos ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  #proyectos article {
+    width: 316px;
+  }
+
+  #proyectos article img {
+    width: 300px;
+    height: auto;
+    aspect-ratio: auto;
+  }
+}
+
+/* ============================================
+   DESKTOP (min-width: 1024px)
+   ============================================ */
+@media (min-width: 1024px) {
+
+  body {
+    max-width: 1280px;
+    padding: 80px;
+  }
+
+  /* Header: nav centrado con más separación */
+  header {
+    justify-content: center;
+    gap: 80px;
+    padding-bottom: 60px;
+  }
+
+  /* Hero: foto e info en fila */
+  #hero {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding-top: 44px;
+    padding-bottom: 16px;
+  }
+
+  .hero-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #hero h1 {
+    max-width: 482px;
+  }
+}
+
+/* --- Habilidades --- */
+#habilidades ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+#habilidades li {
+  color: var(--color-texto);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  padding: 12px 24px;
+  border: 2px solid var(--color-acento);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Habilidades en tablet y desktop: items en fila con wrap */
+@media (min-width: 600px) {
+  #habilidades ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #habilidades li {
+    width: auto;
+    max-width: none;
+  }
+}
